@@ -2,10 +2,7 @@ package com.springboot.project.Option;
 
 
 import com.springboot.project.Quiz.Quiz;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name ="option")
@@ -15,6 +12,8 @@ public class Option {
         @GeneratedValue
         private Integer id;
         private String optionText;
+        @ManyToOne
+        @JoinColumn(name ="quiz_id")
         private Quiz quiz;
         public Integer getId() {
                 return id;

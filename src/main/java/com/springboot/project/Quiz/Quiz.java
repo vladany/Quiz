@@ -1,9 +1,9 @@
 package com.springboot.project.Quiz;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.springboot.project.Option.Option;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name ="quiz")
@@ -15,12 +15,18 @@ public class Quiz {
     private String quizText;
     private Integer lvl;
 
-    @Override
-    public String toString() {
-        return "Quiz{" +
-                "quizText='" + quizText + '\'' +
-                '}';
+    @OneToMany
+    private List<Option> options;
+
+
+    public List<Option> getOptions() {
+        return options;
     }
+
+    public void setOptions(List<Option> options) {
+        this.options = options;
+    }
+
     public Quiz quiz() {
         System.out.println(quizText);
         return quiz();

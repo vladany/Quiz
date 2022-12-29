@@ -16,10 +16,7 @@ public class Joker {
 
     private Boolean used;
 
-    @ManyToOne
-    @JoinColumn(name = "game_id")
-    private Game game;
-
+    private String jokerDescription;
    public Integer getId() {
         return id;
     }
@@ -42,6 +39,14 @@ public class Joker {
 
     public void setUsed(Boolean used) {
         this.used = used;
+    }
+
+    public String getJokerDescription() {
+        return jokerDescription;
+    }
+
+    public void setJokerDescription(String jokerDescription) {
+        this.jokerDescription = jokerDescription;
     }
 
     @Override

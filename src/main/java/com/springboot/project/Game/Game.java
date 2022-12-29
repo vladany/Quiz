@@ -23,6 +23,6 @@ public class Game {
     @OneToMany
     private List<Joker> jokers;
 
-    @OneToMany
-    private List<Quiz>
+   // @OneToMany
+   // private List<Quiz>
 }

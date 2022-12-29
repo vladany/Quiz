@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <link th:href ="@{/css/bootstrap.css}" rel="stylesheet">
+
+  <title>Quiz</title>
+</head>
+<body>
+<h1>Quiz</h1>
+<p>Hier beginnt das Quiz!</p>
+
+
+<div th:object="${quiz}">
+  <h1> [[${quiz.quizText}]] </h1>
+</div>
+
+----------------------------------------------------------
+
+
+<div th:object="${option1}">
+  <button onclick="checkAnswer()"/> [[${option1.optionText}]] </button>
+
+</div>
+
+<div th:object="${option2}">
+  <button> [[${option2.optionText}]] </button>
+
+</div>
+
+<div th:object="${option3}">
+  <button> [[${option3.optionText}]] </button>
+
+</div>
+
+<div th:object="${option4}">
+  <button> [[${option4.optionText}]] </button>
+
+</div>
+</body>
+</html>

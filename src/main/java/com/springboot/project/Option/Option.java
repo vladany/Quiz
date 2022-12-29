@@ -12,9 +12,12 @@ public class Option {
         @GeneratedValue
         private Integer id;
         private String optionText;
+
         @ManyToOne
         @JoinColumn(name ="quiz_id")
         private Quiz quiz;
+
+
         public Integer getId() {
                 return id;
         }

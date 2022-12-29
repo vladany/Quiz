@@ -19,7 +19,7 @@ public class Quiz {
     private List<Option> options;
 
 
-    public List<Option> getOptions() {
+    public List<Option> getOptions(Option option1) {
         return options;
     }
 

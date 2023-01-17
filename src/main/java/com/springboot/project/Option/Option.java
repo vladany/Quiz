@@ -3,9 +3,14 @@ package com.springboot.project.Option;
 
 import com.springboot.project.Quiz.Quiz;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name ="option")
+@Data
+@NoArgsConstructor
 public class Option {
 
         @Id
@@ -17,30 +22,6 @@ public class Option {
         @JoinColumn(name ="quiz_id")
         private Quiz quiz;
 
-
-        public Integer getId() {
-                return id;
-        }
-
-        public void setId(Integer id) {
-                this.id = id;
-        }
-
-        public String getOptionText() {
-                return optionText;
-        }
-
-        public void setOptionText(String optionText) {
-                this.optionText = optionText;
-        }
-
-        public Quiz getQuiz() {
-                return quiz;
-        }
-
-        public void setQuiz(Quiz quiz) {
-                this.quiz = quiz;
-        }
 
 
 }

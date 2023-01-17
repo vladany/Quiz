@@ -3,7 +3,6 @@
 <head>
   <meta charset="ISO-8859-1">
   <link th:href ="@{/css/bootstrap.css}" rel="stylesheet">
-
   <title>Quiz</title>
 </head>
 <body>
@@ -17,25 +16,49 @@
 
 ----------------------------------------------------------
 
-
 <div th:object="${option1}">
-  <button onclick="checkAnswer()"/> [[${option1.optionText}]] </button>
+  <button onclick="check()"/> [[${option1.optionText}]] </button>
 
 </div>
 
 <div th:object="${option2}">
-  <button> [[${option2.optionText}]] </button>
+  <button onclick="check()"> [[${option2.optionText}]] </button>
 
 </div>
 
 <div th:object="${option3}">
-  <button> [[${option3.optionText}]] </button>
+  <button onclick="check()"> [[${option3.optionText}]] </button>
 
 </div>
 
 <div th:object="${option4}">
-  <button> [[${option4.optionText}]] </button>
+  <button onclick="check()"> [[${option4.optionText}]] </button>
 
-</div>
+<div id="main"></div>
+
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+
+var listVal =/*[[${myList}]]*/ "Test";
+
+/*]]>*/
+
+
+function check() {
+  window.onclick = e => {
+    if (e.target.innerText == "Russland") {
+      alert("richtig");
+  } else { alert("falsch");
+  }
+}
+}
+
+check()
+
+
+
+
+</script></div>
 </body>
 </html>

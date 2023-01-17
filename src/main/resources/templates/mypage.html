@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link th:href ="@{/css/bootstrap.css}" rel="stylesheet">
+    <title>Quiz</title>
+</head>
+<body>
+
+<p th:text="${mykey}"></p>
+<div id="main"></div>
+<button onclick="check()">Button</button>
+
+<script th:inline="javascript">
+
+/*<![CDATA[*/
+
+var myval =/*[[${mykey}]]*/ "Test";
+
+var listVal =/*[[${myList}]]*/ "Test";
+
+/*]]>*/
+
+function check() {
+var mainDiv = document.getElementById("main");
+for (i=0; i<listVal.length; i++) {
+var t = document.createTextNode(listVal[i].name+ ' ' +listVal[i].age);
+var p = document.createElement("P");
+
+p.appendChild(t);
+mainDiv.appendChild(p);
+
+}}
+
+check()
+
+</script>
+</body>
+</html>

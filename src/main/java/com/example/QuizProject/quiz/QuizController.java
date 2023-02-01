@@ -4,8 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class QuizController {
@@ -14,6 +13,7 @@ public class QuizController {
 
     @PostConstruct
     private void postInit() {
+        System.out.println("Initialized");
         quizService.createQuestion();
     }
 
@@ -22,5 +22,16 @@ public class QuizController {
         Quiz quiz = quizService.getQuiz(1);
         model.addAttribute("quiz", quiz);
         return "quiz";
+    }
+
+
+    @GetMapping("/check")
+    @ResponseBody
+    public String check(@RequestParam String name) {
+        System.out.println("Got the request");
+        if (name.equalsIgnoreCase("China")){
+            return "Korrekt";
+        }
+        return "Falsch";
     }
 }

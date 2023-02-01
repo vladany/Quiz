@@ -1,7 +1,7 @@
 package com.springboot.project.Option;
 
 
-import com.springboot.project.Quiz.Quiz;
+import com.example.QuizProject.quiz.Quiz;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

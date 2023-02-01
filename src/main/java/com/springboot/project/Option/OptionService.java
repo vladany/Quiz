@@ -1,7 +1,6 @@
 package com.springboot.project.Option;
 
-import com.springboot.project.Quiz.Quiz;
-import com.springboot.project.Quiz.QuizRepository;
+import com.example.QuizProject.quiz.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

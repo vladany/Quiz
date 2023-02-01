@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="ISO-8859-1">
-  <link th:href ="@{/css/bootstrap.css}" rel="stylesheet">
-  <title>Quiz</title>
+    <meta charset="ISO-8859-1">
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+
+    <script src="/postrequest.js"></script>
+    <script src="/getrequest.js"></script>
+
+    <title>Quiz</title>
 </head>
 <body>
 <h1>Quiz</h1>
@@ -11,54 +19,42 @@
 
 
 <div th:object="${quiz}">
-  <h1> [[${quiz.quizText}]] </h1>
+    <h1> [[${quiz.quizText}]] </h1>
 </div>
 
-----------------------------------------------------------
-
-<div th:object="${option1}">
-  <button onclick="check()"/> [[${option1.optionText}]] </button>
-
-</div>
-
-<div th:object="${option2}">
-  <button onclick="check()"> [[${option2.optionText}]] </button>
+<div th:object="${quiz}">
+    <button class="click">[[${quiz.OptionElse1}]]</button>
 
 </div>
 
-<div th:object="${option3}">
-  <button onclick="check()"> [[${option3.optionText}]] </button>
+<div th:object="${quiz}">
+    <button  class="click" >[[${quiz.OptionRight}]]</button>
 
 </div>
 
-<div th:object="${option4}">
-  <button onclick="check()"> [[${option4.optionText}]] </button>
+<div th:object="${quiz}">
+    <button  class="click" >[[${quiz.OptionElse2}]]</button>
+
+</div>
+
+<div th:object="${quiz}">
+    <button class="click">[[${quiz.OptionElse3}]]</button>
+
+</div>
+
+
+<div>
+    <button class="click">TestButton</button>
+
+</div>
 
 <div id="main"></div>
 
-<script th:inline="javascript">
+<script type="text/javascript" th:inline="javascript">
 
-/*<![CDATA[*/
-
-var listVal =/*[[${myList}]]*/ "Test";
-
-/*]]>*/
+</script>
+</div>
 
 
-function check() {
-  window.onclick = e => {
-    if (e.target.innerText == "Russland") {
-      alert("richtig");
-  } else { alert("falsch");
-  }
-}
-}
-
-check()
-
-
-
-
-</script></div>
 </body>
 </html>

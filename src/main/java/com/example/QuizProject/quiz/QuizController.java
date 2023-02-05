@@ -24,16 +24,9 @@ public class QuizController {
     @GetMapping("/quiz")
     public String quiz(Model model) {
 
-        Quiz quiz = quizService.getQuiz(i);
+        Quiz quiz = quizService.getQuiz(2);
         model.addAttribute("quiz", quiz);
         return "quiz";
-    }
-
-    @GetMapping("quiz1")
-    @ResponseBody
-    public Quiz quiz1(@RequestParam(value = "quiz", required = false, defaultValue = "") Object term) {
-        Quiz quiz1 = quizService.getQuiz(1);
-        return quiz1;
     }
 
     @GetMapping("/check")
@@ -42,12 +35,21 @@ public class QuizController {
 
         // hier muss random passieren
 
-        quizService.getQuiz(i);
-        String nameCheck = quizService.getQuiz(1).getOptionRight();
+        quizService.getQuiz(4);
+        String nameCheck = quizService.getQuiz(4).getOptionRight();
         System.out.println("Got the request");
         if (name.equalsIgnoreCase(nameCheck)){
             return "Korrekt";
         }
         return "Falsch";
     }
+
+    @GetMapping("quiz1")
+    @ResponseBody
+    public Quiz quiz1(@RequestParam(value = "quiz1", required = false, defaultValue = "") Object term) {
+        Quiz quiz1 = quizService.getQuiz(3);
+        return quiz1;
+    }
+
+
 }

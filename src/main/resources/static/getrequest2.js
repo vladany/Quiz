@@ -1,14 +1,13 @@
 $(document).ready(
 
+  function x() {
 
-  function level2() {
-
-    console.log("got lvl 2");
     $.ajax({
       url: "http://localhost:9596/quiz1",
       method: "GET",
       dataType: "json",
       success: function (data) {
+
 
         var question = $("#question");
         var option1 = $("#option1")
@@ -16,10 +15,8 @@ $(document).ready(
         var option3 = $("#option3");
         var option4 = $("#option4");
 
-        var test = $("#mainBtn");
-
-
         $(data).each(function (index, element) {
+
 
           question.empty();
           question.append(element.quizText);
@@ -36,7 +33,11 @@ $(document).ready(
           option4.empty();
           option4.append(element.optionElse2);
 
-        })
+        });
       }
-    })
-  })
+    });
+  }
+
+ 
+  
+  )

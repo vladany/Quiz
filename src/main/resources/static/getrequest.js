@@ -1,18 +1,24 @@
 $(document).ready(
-    function() {
 
-    $('.click').click(function() {
+function (){
+  $('.click').click(function() {
     var inhalt = $(this).text();
-        if (inhalt == $(quiz.OptionRight)) {
-            alert("Richtig");
-            console.log(inhalt)
+    var requestUrl = "http://localhost:9596/check?name=" + inhalt
+    $.ajax({
+        url: requestUrl,
+        type: 'GET',
+        success: function(result){
+          if (result == "Korrekt") {
+            console.log(result + "Success");
+            // GET NEW QUSTION
+          } else {
 
-        } else {
 
-        alert("Falsch")
-        console.log(inhalt)
-    }
-    
-    }
+            console.log("That's the end.");
+          }
+        }
+    })
+  }
+)}
 
-    )})
+)

@@ -4,12 +4,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.springframework.context.annotation.Bean;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name ="quiz")
 @Component
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Quiz {
     @Id
     @GeneratedValue
@@ -20,15 +27,9 @@ public class Quiz {
     public String optionElse1;
     public String optionElse2;
     public String optionElse3;
-    public String selectedOption;
 
-    public boolean checkAnswer(String optionRight, String selectedOption) {
-        if (optionRight == selectedOption) {
-            return true;}
-        else {
-            return false;
-        }
-    }
+
+
 
     public Integer getId() {
         return id;

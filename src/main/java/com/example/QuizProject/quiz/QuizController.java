@@ -29,6 +29,12 @@ public class QuizController {
         return "quiz";
     }
 
+    @GetMapping("quiz1")
+    @ResponseBody
+    public Quiz quiz1(@RequestParam(value = "quiz", required = false, defaultValue = "") Object term) {
+        Quiz quiz1 = quizService.getQuiz(1);
+        return quiz1;
+    }
 
     @GetMapping("/check")
     @ResponseBody

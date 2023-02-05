@@ -19,36 +19,30 @@
 
 
 <div th:object="${quiz}">
-    <h1> [[${quiz.quizText}]] </h1>
+    <h1 id="question"> [[${quiz.quizText}]] </h1>
 </div>
 
 <div th:object="${quiz}">
-    <button class="click">[[${quiz.OptionElse1}]]</button>
-
-</div>
-
-<div th:object="${quiz}">
-    <button  class="click" >[[${quiz.OptionRight}]]</button>
+    <button id="option1" class="click">[[${quiz.OptionElse1}]]</button>
 
 </div>
 
 <div th:object="${quiz}">
-    <button  class="click" >[[${quiz.OptionElse2}]]</button>
+    <button id="option2" class="click" >[[${quiz.OptionRight}]]</button>
 
 </div>
 
 <div th:object="${quiz}">
-    <button class="click">[[${quiz.OptionElse3}]]</button>
+    <button id="option3" class="click" >[[${quiz.OptionElse2}]]</button>
 
 </div>
 
-
-<div>
-    <button class="click">TestButton</button>
+<div th:object="${quiz}">
+    <button id="option4" class="click">[[${quiz.OptionElse3}]]</button>
 
 </div>
 
-<div id="main"></div>
+<div id="failure"></div>
 
 <script type="text/javascript" th:inline="javascript">
 

@@ -38,7 +38,6 @@ public class QuizService {
         frage.add(frage5);
         frage.add(frage6);
 
-
         quizRepository.save(frage1);
         quizRepository.save(frage2);
         quizRepository.save(frage3);
@@ -47,16 +46,5 @@ public class QuizService {
         quizRepository.save(frage6);
 
     }
-
-//    public void createQuestion(){
-//        quiz1.setId(1);
-//        quiz1.setQuizText(QuestionsLevel1.txt11);
-//        quiz1.setOptionElse1(QuestionsLevel1.opt12);
-//        quiz1.setOptionRight(QuestionsLevel1.optR15);
-//        quiz1.setOptionElse2(QuestionsLevel1.opt13);
-//        quiz1.setOptionElse3(QuestionsLevel1.opt14);
-//        quizRepository.save(quiz1);
-//    }
-
 }
 

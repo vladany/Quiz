@@ -36,6 +36,8 @@ $(document).ready(
         $("#option4").empty();
         $("#option4").prepend(json.optionElse3);
 
+        $('#joker').append('<button onclick="joker()">50/50 - Joker</button>');
+
 
         $(".click").on('click', function () {
           var inhalt = $(this).text();

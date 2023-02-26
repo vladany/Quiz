@@ -36,7 +36,8 @@ $(document).ready(
         $("#option4").empty();
         $("#option4").prepend(json.optionElse3);
 
-        $('#joker').append('<button onclick="joker()">50/50 - Joker</button>');
+        var score = $("#score");
+        score.append("SCORE: 0 ");
 
 
         $(".click").on('click', function () {
@@ -85,6 +86,9 @@ $(document).ready(
                     $('#game').append('<button class="click1" id="option4"></button>');
                     $("#option4").remove();
                     $("#option4").prepend(json.optionElse3);
+                    var score = $("#score");
+                    score.empty();
+                    score.append("SCORE: 5");
 
                     $(".click1").on('click', function () {
                       var inhalt = $(this).text();
@@ -131,6 +135,9 @@ $(document).ready(
                                 $('#game').append('<button class="click3" id="option4"></button>');
                                 $("#option4").remove();
                                 $("#option4").prepend(json.optionElse3);
+                                var score = $("#score");
+                                score.empty();
+                                score.append("SCORE: 10");
 
                                 $(".click3").on('click', function () {
                                   var inhalt = $(this).text();
@@ -141,7 +148,10 @@ $(document).ready(
                                     success: function (result) {
                                       if (result == "Korrekt") {
                                         console.log(result + "Success");
-                                        alert("Du bist ein Gewinner!")
+                                        var score = $("#score");
+                                        score.empty();
+                                        score.append("SCORE: 15");
+                                        score.append(" - Du bist ein Gewinner! Du hast die volle Score-Punktzahl erreicht!");
                                       }
                                       else {
 
@@ -158,6 +168,7 @@ $(document).ready(
                                         option2.remove();
                                         option3.remove();
                                         option4.remove();
+                                        alert("Score: 10")
 
                                         failure.append("YOU LOOSE !!")
                                       }
@@ -189,6 +200,7 @@ $(document).ready(
                             option2.remove();
                             option3.remove();
                             option4.remove();
+                            alert("Score: 5")
 
                             failure.append("YOU LOOSE !!")
                           }
@@ -211,6 +223,7 @@ $(document).ready(
                 option2.remove();
                 option3.remove();
                 option4.remove();
+                alert("Score: 0")
 
                 failure.append("YOU LOOSE !!")
               }

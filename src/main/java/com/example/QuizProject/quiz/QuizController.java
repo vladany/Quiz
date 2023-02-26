@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class QuizController {
 
     int minLevel1 = 1;
+    int maxLevel1 = 4;
+
     int minLevel2 = 5;
-    int minLevel3 = 10;
-    int maxLevel1 = 5;
     int maxLevel2 = 10;
+
+    int minLevel3 = 11;
     int maxLevel3 = 15;
     int level1 = (int)Math.floor(Math.random() * (maxLevel1 - minLevel1 + 1) + minLevel1);
     int level2 = (int)Math.floor(Math.random() * (maxLevel2 - minLevel2 + 1) + minLevel2);

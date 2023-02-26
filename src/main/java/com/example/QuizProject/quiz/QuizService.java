@@ -12,14 +12,14 @@ import java.util.Optional;
 @Service
 public class QuizService {
 
+
     @Autowired
     private QuizRepository quizRepository;
-
-
     @Autowired
-    Quiz quiz1;
-    public void save(Quiz quiz1) {
-        quizRepository.save(quiz1);
+    private Quiz quiz;
+    public void save(Quiz quiz) {
+
+        quizRepository.save(quiz);
     }
 
     public Quiz getQuiz(Integer id) {
@@ -27,15 +27,32 @@ public class QuizService {
         return quiz;
     }
 
-    public void createQuestion(){
-        quiz1.setId(1);
-        quiz1.setQuizText("Was ist das größte Land?");
-        quiz1.setOptionElse1("China");
-        quiz1.setOptionRight("Russland");
-        quiz1.setOptionElse2("Kanada");
-        quiz1.setOptionElse3("Brasilien");
-        quizRepository.save(quiz1);
+    public void createQuestion() {
+
+        ArrayList<Quiz> frage = new ArrayList<>();
+        Quiz frage1 = new Quiz(1, "Wie viele Bundeslänger hat Deutschland", "16", "6", "24", "12");
+        Quiz frage2 = new Quiz(2, "Was ist der höchste Berg?", "Mount Everest", "Zugspitze", "Mont Blanc", "Dolomiten");
+        Quiz frage3 = new Quiz(3, "Wie nennt man ein männliches Schwein?", "Eber", "Erpel", "Bock", "Hengst");
+        Quiz frage4 = new Quiz(4, "Wofür stehen die olympischen Ringe?", "Kontinente", "Disziplinen", "Jahreszeiten", "Frieden");
+        Quiz frage5 = new Quiz(5, "Welcher Planet ist der Sonne am nähsten?", "Merkur", "Jupiter", "Mars", "Uranus");
+        Quiz frage6 = new Quiz(6, "Was versteht man unter einem String?", "Zeichenkette", "Zahlenkette", "Datenkette", "Wahrheitswert");
+
+        frage.add(frage1);
+        frage.add(frage2);
+        frage.add(frage3);
+        frage.add(frage4);
+        frage.add(frage5);
+        frage.add(frage6);
+
+        quizRepository.save(frage1);
+        quizRepository.save(frage2);
+        quizRepository.save(frage3);
+        quizRepository.save(frage4);
+        quizRepository.save(frage5);
+        quizRepository.save(frage6);
+
     }
+
 
 }
 

@@ -9,6 +9,7 @@ public class StartController {
 
     @RequestMapping()
     public String index() {
+
         return "start";
     }
 }
